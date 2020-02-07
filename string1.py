@@ -24,19 +24,22 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    """Your code goes here.  Edit this docstring."""
-    return
-
-
+    if count < 10:
+        return "Number of donuts: " + str(count)
+    else:
+        return "Number of donuts: many"
+    
 # B. both_ends
 # Given a string s, return a string made of the first 2
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    if len(s) < 2:
+        return ''
+    return s[:2] + s[-2:]
 
+#for loop to run threw string// first 2 skip 2
 
 # C. fix_start
 # Given a string s, return a string
@@ -48,8 +51,8 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    s = s[0] + s[1:].replace(s[0], '*')
+    return s
 
 
 # D. MixUp
@@ -60,9 +63,9 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
-
+    new_a = b[:2] + a[2:]
+    new_b = a[:2] + b[2:]
+    return new_a + ' ' + new_b
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
